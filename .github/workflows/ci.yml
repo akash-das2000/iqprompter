@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+      - name: Install Poetry
+        run: pip install poetry
+      - name: Install deps
+        run: poetry install --no-interaction --no-ansi
+      - name: Lint
+        run: poetry run flake8 src tests
+      - name: Test
+        run: poetry run pytest -q
