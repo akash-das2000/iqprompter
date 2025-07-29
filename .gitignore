@@ -1,0 +1,11 @@
+# Virtual environment
+.venv/
+# Poetry venv metadata
+.poetry/
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+# Lock file (optional to commit, but you can ignore if you prefer)
+poetry.lock
+# VS Code
+.vscode/
