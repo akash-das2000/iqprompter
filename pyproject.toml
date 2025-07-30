@@ -1,31 +1,21 @@
-[project]
-name = "iqprompter"
-version = "0.1.0"
-description = ""
-authors = [
-    {name = "Your Name",email = "you@example.com"}
-]
-readme = "README.md"
-requires-python = ">=3.13"
-dependencies = [
-    "openai (>=1.97.1,<2.0.0)",
-    "numpy (>=2.3.2,<3.0.0)"
-]
-
 [tool.poetry]
 name = "iqprompter"
 version = "0.1.0"
 description = "Interactive IQ-based LLM prompt evaluation toolkit"
 authors = ["Akash Das <akashdas1966@gmail.com>"]
 license = "MIT"
-repository = "https://github.com/<akash-das2000>/iqprompter"
-homepage = "https://github.com/<akash-das2000>/iqprompter"
-readme = "README.rst"
+repository = "https://github.com/akash-das2000/iqprompter"
+homepage = "https://github.com/akash-das2000/iqprompter"
+readme = "README.md"
+packages = [ { include = "iqprompter", from = "src" } ]
 
-packages = [
-  { include = "iqprompter", from = "src" }
-]
-
+[tool.poetry.dependencies]
+python = ">=3.11,<4.0"
+openai = ">=1.97.1,<2.0.0"
+numpy = ">=2.3.2,<3.0.0"
+python-dotenv = ">=1.1.1,<2.0.0"
+google-genai = "^0.3.0"
+jsonschema = "^4.25.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.4.1"
